@@ -1,0 +1,524 @@
+ubuntu,CVE-2023-6129,LOW,> POLY1305 MAC implementation corrupts vector registers on PowerPC
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                     |
+| Fixed version  | not fixed                                                                               |
+
+ubuntu,CVE-2023-6237,LOW,> Excessive time spent checking invalid RSA public keys
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                     |
+| Fixed version  | not fixed                                                                               |
+
+ubuntu,CVE-2022-3219,LOW,> GnuPG can be made to spin on a relatively small input by (for example) crafting a public key with thousands of signatures attached, compressed down to just a few KB.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/gnupg2@2.2.27-3ubuntu2.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                     |
+| Fixed version  | not fixed                                                                               |
+| CVSS Score     |                                                                                     3.3 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L                                            |
+
+ubuntu,CVE-2023-2602,LOW,> A vulnerability was found in the pthread_create() function in libcap. This issue may allow a malicious actor to use cause __real_pthread_create() to return an error, which can exhaust the process memory.
+
+|                |                                                                                       |
+|----------------|---------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/libcap2@1:2.44-1build3?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1:2.44-1ubuntu0.22.04.1                                                              |
+| Fixed version  | 1:2.44-1ubuntu0.22.04.1                                                               |
+| CVSS Score     |                                                                                   3.3 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L                                          |
+
+ubuntu,CVE-2023-29383,LOW,> In Shadow 4.13, it is possible to inject control characters into fields provided to the SUID program chfn (change finger). Although it is not possible to exploit this directly (e.g., adding a new user fails because \n is in the block list), it is possible to misrepresent the /etc/passwd file when viewed. Use of \r manipulations and Unicode characters to work around blocking of the : character make it possible to give the impression that a new user has been added. In other words, an adversary may be able to convince a system administrator to take the system offline (an indirect, social-engineered denial of service) by demonstrating that "cat /etc/passwd" shows a rogue user account.
+
+|                |                                                                                        |
+|----------------|----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/shadow@1:4.8.1-2ubuntu2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                    |
+| Fixed version  | not fixed                                                                              |
+| CVSS Score     |                                                                                    3.3 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N                                           |
+
+ubuntu,CVE-2023-4016,LOW,> Under some circumstances, this weakness allows a user who has access to run the “ps” utility on a machine, the ability to write almost unlimited amounts of unfiltered data into the process heap.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/procps@2:3.3.17-6ubuntu2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <2:3.3.17-6ubuntu2.1                                                                    |
+| Fixed version  | 2:3.3.17-6ubuntu2.1                                                                     |
+| CVSS Score     |                                                                                     3.3 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L                                            |
+
+ubuntu,CVE-2013-4235,LOW,> shadow: TOCTOU (time-of-check time-of-use) race condition when copying and removing directory trees
+
+|                |                                                                                        |
+|----------------|----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/shadow@1:4.8.1-2ubuntu2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1:4.8.1-2ubuntu2.1                                                                    |
+| Fixed version  | 1:4.8.1-2ubuntu2.1                                                                     |
+| CVSS Score     |                                                                                    4.7 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N                                           |
+
+ubuntu,CVE-2023-0465,LOW,> Applications that use a non-default option when verifying certificates may be vulnerable to an attack from a malicious CA to circumvent certain checks. Invalid certificate policies in leaf certificates are silently ignored by OpenSSL and other certificate policy checks are skipped for that certificate. A malicious CA could use this to deliberately assert invalid certificate policies in order to circumvent policy checking on the certificate altogether. Policy processing is disabled by default but can be enabled by passing the `-policy' argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()' function.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.9                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.9                                                                        |
+| CVSS Score     |                                                                                     5.3 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N                                            |
+
+ubuntu,CVE-2023-0466,LOW,> The function X509_VERIFY_PARAM_add0_policy() is documented to implicitly enable the certificate policy check when doing certificate verification. However the implementation of the function does not enable the check which allows certificates with invalid or incorrect policies to pass the certificate verification. As suddenly enabling the policy check could break existing deployments it was decided to keep the existing behavior of the X509_VERIFY_PARAM_add0_policy() function. Instead the applications that require OpenSSL to perform certificate policy check need to use X509_VERIFY_PARAM_set1_policies() or explicitly enable the policy check by calling X509_VERIFY_PARAM_set_flags() with the X509_V_FLAG_POLICY_CHECK flag argument. Certificate policy checks are disabled by default in OpenSSL and are not commonly used by applications.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.9                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.9                                                                        |
+| CVSS Score     |                                                                                     5.3 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N                                            |
+
+ubuntu,CVE-2023-2975,LOW,> Issue summary: The AES-SIV cipher implementation contains a bug that causes it to ignore empty associated data entries which are unauthenticated as a consequence. Impact summary: Applications that use the AES-SIV algorithm and want to authenticate empty data entries as associated data can be mislead by removing adding or reordering such empty entries as these are ignored by the OpenSSL implementation. We are currently unaware of any such applications. The AES-SIV algorithm allows for authentication of multiple associated data entries along with the encryption. To authenticate empty data the application has to call EVP_EncryptUpdate() (or EVP_CipherUpdate()) with NULL pointer as the output buffer and 0 as the input buffer length. The AES-SIV implementation in OpenSSL just returns success for such a call instead of performing the associated data authentication operation. The empty data thus will not be authenticated. As this issue does not affect non-empty associated data authentication and we expect it to be rare for an application to use empty associated data entries this is qualified as Low severity issue.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.12                                                                      |
+| Fixed version  | 3.0.2-0ubuntu1.12                                                                       |
+| CVSS Score     |                                                                                     5.3 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N                                            |
+
+ubuntu,CVE-2023-3446,LOW,> Issue summary: Checking excessively long DH keys or parameters may be very slow. Impact summary: Applications that use the functions DH_check(), DH_check_ex() or EVP_PKEY_param_check() to check a DH key or DH parameters may experience long delays. Where the key or parameters that are being checked have been obtained from an untrusted source this may lead to a Denial of Service. The function DH_check() performs various checks on DH parameters. One of those checks confirms that the modulus ('p' parameter) is not too large. Trying to use a very large modulus is slow and OpenSSL will not normally use a modulus which is over 10,000 bits in length. However the DH_check() function checks numerous aspects of the key or parameters that have been supplied. Some of those checks use the supplied modulus value even if it has already been found to be too large. An application that calls DH_check() and supplies a key or parameters obtained from an untrusted source could be vulernable to a Denial of Service attack. The function DH_check() is itself called by a number of other OpenSSL functions. An application calling any of those other functions may similarly be affected. The other functions affected by this are DH_check_ex() and EVP_PKEY_param_check(). Also vulnerable are the OpenSSL dhparam and pkeyparam command line applications when using the '-check' option. The OpenSSL SSL/TLS implementation is not affected by this issue. The OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.12                                                                      |
+| Fixed version  | 3.0.2-0ubuntu1.12                                                                       |
+| CVSS Score     |                                                                                     5.3 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L                                            |
+
+ubuntu,CVE-2023-3817,LOW,> Issue summary: Checking excessively long DH keys or parameters may be very slow. Impact summary: Applications that use the functions DH_check(), DH_check_ex() or EVP_PKEY_param_check() to check a DH key or DH parameters may experience long delays. Where the key or parameters that are being checked have been obtained from an untrusted source this may lead to a Denial of Service. The function DH_check() performs various checks on DH parameters. After fixing CVE-2023-3446 it was discovered that a large q parameter value can also trigger an overly long computation during some of these checks. A correct q value, if present, cannot be larger than the modulus p parameter, thus it is unnecessary to perform these checks if q is larger than p. An application that calls DH_check() and supplies a key or parameters obtained from an untrusted source could be vulnerable to a Denial of Service attack. The function DH_check() is itself called by a number of other OpenSSL functions. An application calling any of those other functions may similarly be affected. The other functions affected by this are DH_check_ex() and EVP_PKEY_param_check(). Also vulnerable are the OpenSSL dhparam and pkeyparam command line applications when using the "-check" option. The OpenSSL SSL/TLS implementation is not affected by this issue. The OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.12                                                                      |
+| Fixed version  | 3.0.2-0ubuntu1.12                                                                       |
+| CVSS Score     |                                                                                     5.3 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L                                            |
+
+ubuntu,CVE-2022-27943,LOW,> libiberty/rust-demangle.c in GNU GCC 11.2 allows stack consumption in demangle_const, as demonstrated by nm-new.
+
+|                |                                                                                             |
+|----------------|---------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/gcc-12@12.1.0-2ubuntu1~22.04?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                         |
+| Fixed version  | not fixed                                                                                   |
+| CVSS Score     |                                                                                         5.5 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H                                                |
+
+ubuntu,CVE-2023-1255,LOW,> Issue summary: The AES-XTS cipher decryption implementation for 64 bit ARM platform contains a bug that could cause it to read past the input buffer, leading to a crash. Impact summary: Applications that use the AES-XTS algorithm on the 64 bit ARM platform can crash in rare circumstances. The AES-XTS algorithm is usually used for disk encryption. The AES-XTS cipher decryption implementation for 64 bit ARM platform will read past the end of the ciphertext buffer if the ciphertext size is 4 mod 5 in 16 byte blocks, e.g. 144 bytes or 1024 bytes. If the memory after the ciphertext buffer is unmapped, this will trigger a crash which results in a denial of service. If an attacker can control the size and location of the ciphertext buffer being decrypted by an application using AES-XTS on 64 bit ARM, the application is affected. This is fairly unlikely making this issue a Low severity one.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.10                                                                      |
+| Fixed version  | 3.0.2-0ubuntu1.10                                                                       |
+| CVSS Score     |                                                                                     5.9 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2016-2781,LOW,> chroot in GNU coreutils, when used with --userspec, allows local users to escape to the parent session via a crafted TIOCSTI ioctl call, which pushes characters to the terminal's input buffer.
+
+|                |                                                                                          |
+|----------------|------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/coreutils@8.32-4.1ubuntu1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                      |
+| Fixed version  | not fixed                                                                                |
+| CVSS Score     |                                                                                      6.5 |
+| CVSS Vector    | CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:H/A:N                                             |
+
+ubuntu,CVE-2023-4806,LOW,> A flaw was found in glibc. In an extremely rare situation, the getaddrinfo function may access memory that has been freed, resulting in an application crash. This issue is only exploitable when a NSS module implements only the _nss_*_gethostbyname2_r and _nss_*_getcanonname_r hooks without implementing the _nss_*_gethostbyname3_r hook. The resolved name should return a large number of IPv6 and IPv4, and the call to the getaddrinfo function should have the AF_INET6 address family with AI_CANONNAME, AI_ALL and AI_V4MAPPED as flags.
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/glibc@2.35-0ubuntu3.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <2.35-0ubuntu3.5                                                                     |
+| Fixed version  | 2.35-0ubuntu3.5                                                                      |
+| CVSS Score     |                                                                                  5.9 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H                                         |
+
+ubuntu,CVE-2023-4813,LOW,> A flaw was found in glibc. In an uncommon situation, the gaih_inet function may use memory that has been freed, resulting in an application crash. This issue is only exploitable when the getaddrinfo function is called and the hosts database in /etc/nsswitch.conf is configured with SUCCESS=continue or SUCCESS=merge.
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/glibc@2.35-0ubuntu3.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <2.35-0ubuntu3.5                                                                     |
+| Fixed version  | 2.35-0ubuntu3.5                                                                      |
+| CVSS Score     |                                                                                  5.9 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H                                         |
+
+ubuntu,CVE-2022-29458,LOW,> ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.
+
+|                |                                                                              |
+|----------------|------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/ncurses@6.3-2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <6.3-2ubuntu0.1                                                              |
+| Fixed version  | 6.3-2ubuntu0.1                                                               |
+| CVSS Score     |                                                                          7.1 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H                                 |
+
+ubuntu,CVE-2016-20013,LOW,> sha256crypt and sha512crypt through 0.6 allow attackers to cause a denial of service (CPU consumption) because the algorithm's runtime is proportional to the square of the length of the password.
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/glibc@2.35-0ubuntu3.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                  |
+| Fixed version  | not fixed                                                                            |
+| CVSS Score     |                                                                                  7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                         |
+
+ubuntu,CVE-2022-3358,LOW,> OpenSSL supports creating a custom cipher via the legacy EVP_CIPHER_meth_new() function and associated function calls. This function was deprecated in OpenSSL 3.0 and application authors are instead encouraged to use the new provider mechanism in order to implement custom ciphers. OpenSSL versions 3.0.0 to 3.0.5 incorrectly handle legacy custom ciphers passed to the EVP_EncryptInit_ex2(), EVP_DecryptInit_ex2() and EVP_CipherInit_ex2() functions (as well as other similarly named encryption and decryption initialisation functions). Instead of using the custom cipher directly it incorrectly tries to fetch an equivalent cipher from the available providers. An equivalent cipher is found based on the NID passed to EVP_CIPHER_meth_new(). This NID is supposed to represent the unique NID for a given cipher. However it is possible for an application to incorrectly pass NID_undef as this value in the call to EVP_CIPHER_meth_new(). When NID_undef is used in this way the OpenSSL encryption/decryption initialisation function will match the NULL cipher as being equivalent and will fetch this from the available providers. This will succeed if the default provider has been loaded (or if a third party provider has been loaded that offers this cipher). Using the NULL cipher means that the plaintext is emitted as the ciphertext. Applications are only affected by this issue if they call EVP_CIPHER_meth_new() using NID_undef and subsequently use it in a call to an encryption/decryption initialisation function. Applications that only use SSL/TLS are not impacted by this issue. Fixed in OpenSSL 3.0.6 (Affected 3.0.0-3.0.5).
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.7                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.7                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N                                            |
+
+ubuntu,CVE-2023-0464,LOW,> A security vulnerability has been identified in all supported versions of OpenSSL related to the verification of X.509 certificate chains that include policy constraints. Attackers may be able to exploit this vulnerability by creating a malicious certificate chain that triggers exponential use of computational resources, leading to a denial-of-service (DoS) attack on affected systems. Policy processing is disabled by default but can be enabled by passing the `-policy' argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()' function.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.9                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.9                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2022-3715,LOW,> A flaw was found in the bash package, where a heap-buffer overflow can occur in valid parameter_transform. This issue may lead to memory problems.
+
+|                |                                                                                  |
+|----------------|----------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/bash@5.1-6ubuntu1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                              |
+| Fixed version  | not fixed                                                                        |
+| CVSS Score     |                                                                              7.8 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                     |
+
+ubuntu,CVE-2022-3996,LOW,> If an X.509 certificate contains a malformed policy constraint and policy processing is enabled, then a write lock will be taken twice recursively. On some operating systems (most widely: Windows) this results in a denial of service when the affected process hangs. Policy processing being enabled on a publicly facing server is not considered to be a common setup. Policy processing is enabled by passing the `-policy' argument to the command line utilities or by calling the `X509_VERIFY_PARAM_set1_policies()' function. Update (31 March 2023): The description of the policy processing enablement was corrected based on CVE-2023-0466.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.9                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.9                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2022-48522,LOW,> In Perl 5.34.0, function S_find_uninit_var in sv.c has a stack-based crash that can lead to remote code execution or local privilege escalation.
+
+|                |                                                                                       |
+|----------------|---------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/perl@5.34.0-3ubuntu1.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <5.34.0-3ubuntu1.3                                                                    |
+| Fixed version  | 5.34.0-3ubuntu1.3                                                                     |
+| CVSS Score     |                                                                                   9.8 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H                                          |
+
+ubuntu,CVE-2022-4899,LOW,> A vulnerability was found in zstd v1.4.10, where an attacker can supply empty string as an argument to the command line tool to cause buffer overrun.
+
+|                |                                                                                           |
+|----------------|-------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/libzstd@1.4.8+dfsg-3build1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                       |
+| Fixed version  | not fixed                                                                                 |
+| CVSS Score     |                                                                                       7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                              |
+
+ubuntu,CVE-2022-28321,LOW,> The Linux-PAM package before 1.5.2-6.1 for openSUSE Tumbleweed allows authentication bypass for SSH logins. The pam_access.so module doesn't correctly restrict login if a user tries to connect from an IP address that is not resolvable via DNS. In such conditions, a user with denied access to a machine can still get access. NOTE: the relevance of this issue is largely limited to openSUSE Tumbleweed and openSUSE Factory; it does not affect Linux-PAM upstream.
+
+|                |                                                                                    |
+|----------------|------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/pam@1.4.0-11ubuntu2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1.4.0-11ubuntu2.1                                                                 |
+| Fixed version  | 1.4.0-11ubuntu2.1                                                                  |
+| CVSS Score     |                                                                                9.8 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H                                       |
+
+ubuntu,CVE-2022-4203,MEDIUM,> A read buffer overrun can be triggered in X.509 certificate verification, specifically in name constraint checking. Note that this occurs after certificate chain signature verification and requires either a CA to have signed the malicious certificate or for the application to continue certificate verification despite failure to construct a path to a trusted issuer. The read buffer overrun might result in a crash which could lead to a denial of service attack. In theory it could also result in the disclosure of private memory contents (such as private keys, or sensitive plaintext) although we are not aware of any working exploit leading to memory contents disclosure as of the time of release of this advisory. In a TLS client, this can be triggered by connecting to a malicious server. In a TLS server, this can be triggered if the server requests client authentication and a malicious client connects.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     4.9 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2017-11164,LOW,> In PCRE 8.41, the OP_KETRMAX feature in the match function in pcre_exec.c allows stack exhaustion (uncontrolled recursion) when processing a crafted regular expression.
+
+|                |                                                                                               |
+|----------------|-----------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/pcre3@2:8.39-13ubuntu0.22.04.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | >=0                                                                                           |
+| Fixed version  | not fixed                                                                                     |
+| CVSS Score     |                                                                                           7.5 |
+| CVSS Vector    | CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                                  |
+
+ubuntu,CVE-2023-39804,MEDIUM,> [A stack overflow vulnerability exists in GNU Tar up to including v1.34. The bug exists in the function xattr_decoder() in xheader.c, where alloca() is used and it may overflow the stack if a sufficiently long xattr key is used. The vulnerability can be triggered when extracting a tar/pax archive that contains such a long xattr key.]
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/tar@1.34+dfsg-1build3?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1.34+dfsg-1ubuntu0.1.22.04.2                                                        |
+| Fixed version  | 1.34+dfsg-1ubuntu0.1.22.04.2                                                         |
+
+ubuntu,CVE-2022-4415,MEDIUM,> A vulnerability was found in systemd. This security flaw can cause a local information leak due to systemd-coredump not respecting the fs.suid_dumpable kernel setting.
+
+|                |                                                                                          |
+|----------------|------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/systemd@249.11-0ubuntu3.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <249.11-0ubuntu3.7                                                                       |
+| Fixed version  | 249.11-0ubuntu3.7                                                                        |
+| CVSS Score     |                                                                                      5.5 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N                                             |
+
+ubuntu,CVE-2022-48303,MEDIUM,> GNU Tar through 1.34 has a one-byte out-of-bounds read that results in use of uninitialized memory for a conditional jump. Exploitation to change the flow of control has not been demonstrated. The issue occurs in from_header in list.c via a V7 archive in which mtime has approximately 11 whitespace characters.
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/tar@1.34+dfsg-1build3?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1.34+dfsg-1ubuntu0.1.22.04.1                                                        |
+| Fixed version  | 1.34+dfsg-1ubuntu0.1.22.04.1                                                         |
+| CVSS Score     |                                                                                  5.5 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H                                         |
+
+ubuntu,CVE-2023-2650,MEDIUM,> Issue summary: Processing some specially crafted ASN.1 object identifiers or data containing them may be very slow. Impact summary: Applications that use OBJ_obj2txt() directly, or use any of the OpenSSL subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS with no message size limit may experience notable to very long delays when processing those messages, which may lead to a Denial of Service. An OBJECT IDENTIFIER is composed of a series of numbers - sub-identifiers - most of which have no size limit. OBJ_obj2txt() may be used to translate an ASN.1 OBJECT IDENTIFIER given in DER encoding form (using the OpenSSL type ASN1_OBJECT) to its canonical numeric text form, which are the sub-identifiers of the OBJECT IDENTIFIER in decimal form, separated by periods. When one of the sub-identifiers in the OBJECT IDENTIFIER is very large (these are sizes that are seen as absurdly large, taking up tens or hundreds of KiBs), the translation to a decimal number in text may take a very long time. The time complexity is O(n^2) with 'n' being the size of the sub-identifiers in bytes (*). With OpenSSL 3.0, support to fetch cryptographic algorithms using names / identifiers in string form was introduced. This includes using OBJECT IDENTIFIERs in canonical numeric text form as identifiers for fetching algorithms. Such OBJECT IDENTIFIERs may be received through the ASN.1 structure AlgorithmIdentifier, which is commonly used in multiple protocols to specify what cryptographic algorithm should be used to sign or verify, encrypt or decrypt, or digest passed data. Applications that call OBJ_obj2txt() directly with untrusted data are affected, with any version of OpenSSL. If the use is for the mere purpose of display, the severity is considered low. In OpenSSL 3.0 and newer, this affects the subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS. It also impacts anything that processes X.509 certificates, including simple things like verifying its signature. The impact on TLS is relatively low, because all versions of OpenSSL have a 100KiB limit on the peer's certificate chain. Additionally, this only impacts clients, or servers that have explicitly enabled client authentication. In OpenSSL 1.1.1 and 1.0.2, this only affects displaying diverse objects, such as X.509 certificates. This is assumed to not happen in such a way that it would cause a Denial of Service, so these versions are considered not affected by this issue in such a way that it would be cause for concern, and the severity is therefore considered low.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.10                                                                      |
+| Fixed version  | 3.0.2-0ubuntu1.10                                                                       |
+| CVSS Score     |                                                                                     6.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-36054,MEDIUM,> lib/kadm5/kadm_rpc_xdr.c in MIT Kerberos 5 (aka krb5) before 1.20.2 and 1.21.x before 1.21.1 frees an uninitialized pointer. A remote authenticated user can trigger a kadmind crash. This occurs because _xdr_kadm5_principal_ent_rec does not validate the relationship between n_key_data and the key_data array count.
+
+|                |                                                                              |
+|----------------|------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/krb5@1.19.2-2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1.19.2-2ubuntu0.3                                                           |
+| Fixed version  | 1.19.2-2ubuntu0.3                                                            |
+| CVSS Score     |                                                                          6.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H                                 |
+
+ubuntu,CVE-2022-3821,MEDIUM,> An off-by-one Error issue was discovered in Systemd in format_timespan() function of time-util.c. An attacker could supply specific values for time and accuracy that leads to buffer overrun in format_timespan(), leading to a Denial of Service.
+
+|                |                                                                                          |
+|----------------|------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/systemd@249.11-0ubuntu3.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <249.11-0ubuntu3.7                                                                       |
+| Fixed version  | 249.11-0ubuntu3.7                                                                        |
+| CVSS Score     |                                                                                      5.5 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H                                             |
+
+ubuntu,CVE-2023-5981,MEDIUM,> A vulnerability was found that the response times to malformed ciphertexts in RSA-PSK ClientKeyExchange differ from response times of ciphertexts with correct PKCS#1 v1.5 padding.
+
+|                |                                                                                          |
+|----------------|------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/gnutls28@3.7.3-4ubuntu1.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.7.3-4ubuntu1.3                                                                        |
+| Fixed version  | 3.7.3-4ubuntu1.3                                                                         |
+| CVSS Score     |                                                                                      5.9 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N                                             |
+
+ubuntu,CVE-2023-0361,MEDIUM,> A timing side-channel in the handling of RSA ClientKeyExchange messages was discovered in GnuTLS. This side-channel can be sufficient to recover the key encrypted in the RSA ciphertext across a network in a Bleichenbacher style attack. To achieve a successful decryption the attacker would need to send a large amount of specially crafted messages to the vulnerable server. By recovering the secret from the ClientKeyExchange message, the attacker would be able to decrypt the application data exchanged over that connection.
+
+|                |                                                                                          |
+|----------------|------------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/gnutls28@3.7.3-4ubuntu1.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.7.3-4ubuntu1.2                                                                        |
+| Fixed version  | 3.7.3-4ubuntu1.2                                                                         |
+| CVSS Score     |                                                                                      7.4 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N                                             |
+
+ubuntu,CVE-2022-4450,MEDIUM,> The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and decodes the "name" (e.g. "CERTIFICATE"), any header data and the payload data. If the function succeeds then the "name_out", "header" and "data" arguments are populated with pointers to buffers containing the relevant decoded data. The caller is responsible for freeing those buffers. It is possible to construct a PEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex() will return a failure code but will populate the header argument with a pointer to a buffer that has already been freed. If the caller also frees this buffer then a double free will occur. This will most likely lead to a crash. This could be exploited by an attacker who has the ability to supply malicious PEM files for parsing to achieve a denial of service attack. The functions PEM_read_bio() and PEM_read() are simple wrappers around PEM_read_bio_ex() and therefore these functions are also directly affected. These functions are also called indirectly by a number of other OpenSSL functions including PEM_X509_INFO_read_bio_ex() and SSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal uses of these functions are not vulnerable because the caller does not free the header argument if PEM_read_bio_ex() returns a failure code. These locations include the PEM_read_bio_TYPE() functions as well as the decoders introduced in OpenSSL 3.0. The OpenSSL asn1parse command line application is also impacted by this issue.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2022-4304,MEDIUM,> A timing based side channel exists in the OpenSSL RSA Decryption implementation which could be sufficient to recover a plaintext across a network in a Bleichenbacher style attack. To achieve a successful decryption an attacker would have to be able to send a very large number of trial messages for decryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5, RSA-OEAP and RSASVE. For example, in a TLS connection, RSA is commonly used by a client to send an encrypted pre-master secret to the server. An attacker that had observed a genuine connection between a client and a server could use this flaw to send trial messages to the server and record the time taken to process them. After a sufficiently large number of messages the attacker could recover the pre-master secret used for the original connection and thus be able to decrypt the application data sent over that connection.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     5.9 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N                                            |
+
+ubuntu,CVE-2023-0215,MEDIUM,> The public API function BIO_new_NDEF is a helper function used for streaming ASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the SMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by end user applications. The function receives a BIO from the caller, prepends a new BIO_f_asn1 filter BIO onto the front of it to form a BIO chain, and then returns the new head of the BIO chain to the caller. Under certain conditions, for example if a CMS recipient public key is invalid, the new filter BIO is freed and the function returns a NULL result indicating a failure. However, in this case, the BIO chain is not properly cleaned up and the BIO passed by the caller still retains internal pointers to the previously freed filter BIO. If the caller then goes on to call BIO_pop() on the BIO then a use-after-free will occur. This will most likely result in a crash. This scenario occurs directly in the internal function B64_write_ASN1() which may cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on the BIO. This internal function is in turn called by the public API functions PEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream, SMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7. Other public API functions that may be impacted by this include i2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and i2d_PKCS7_bio_stream. The OpenSSL cms and smime command line applications are similarly affected.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-0216,MEDIUM,> An invalid pointer dereference on read can be triggered when an application tries to load malformed PKCS7 data with the d2i_PKCS7(), d2i_PKCS7_bio() or d2i_PKCS7_fp() functions. The result of the dereference is an application crash which could lead to a denial of service attack. The TLS implementation in OpenSSL does not call this function however third party applications might call these functions on untrusted data.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-0401,MEDIUM,> A NULL pointer can be dereferenced when signatures are being verified on PKCS7 signed or signedAndEnveloped data. In case the hash algorithm used for the signature is known to the OpenSSL library but the implementation of the hash algorithm is not available the digest initialization will fail. There is a missing check for the return value from the initialization function which later leads to invalid usage of the digest API most likely leading to a crash. The unavailability of an algorithm can be caused by using FIPS enabled configuration of providers or more commonly by not loading the legacy provider. PKCS7 data is processed by the SMIME library calls and also by the time stamp (TS) library calls. The TLS implementation in OpenSSL does not call these functions however third party applications would be affected if they call these functions to verify signatures on untrusted data.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-5363,MEDIUM,> Issue summary: A bug has been identified in the processing of key and initialisation vector (IV) lengths. This can lead to potential truncation or overruns during the initialisation of some symmetric ciphers. Impact summary: A truncation in the IV can result in non-uniqueness, which could result in loss of confidentiality for some cipher modes. When calling EVP_EncryptInit_ex2(), EVP_DecryptInit_ex2() or EVP_CipherInit_ex2() the provided OSSL_PARAM array is processed after the key and IV have been established. Any alterations to the key length, via the "keylen" parameter or the IV length, via the "ivlen" parameter, within the OSSL_PARAM array will not take effect as intended, potentially causing truncation or overreading of these values. The following ciphers and cipher modes are impacted: RC2, RC4, RC5, CCM, GCM and OCB. For the CCM, GCM and OCB cipher modes, truncation of the IV can result in loss of confidentiality. For example, when following NIST's SP 800-38D section 8.2.1 guidance for constructing a deterministic IV for AES in GCM mode, truncation of the counter portion could lead to IV reuse. Both truncations and overruns of the key and overruns of the IV will produce incorrect results and could, in some cases, trigger a memory exception. However, these issues are not currently assessed as security critical. Changing the key and/or IV lengths is not considered to be a common operation and the vulnerable API was recently introduced. Furthermore it is likely that application developers will have spotted this problem during testing since decryption would fail unless both peers in the communication were similarly vulnerable. For these reasons we expect the probability of an application being vulnerable to this to be quite low. However if an application is vulnerable then this issue is considered very serious. For these reasons we have assessed this issue as Moderate severity overall. The OpenSSL SSL/TLS implementation is not affected by this issue. The OpenSSL 3.0 and 3.1 FIPS providers are not affected by this because the issue lies outside of the FIPS provider boundary. OpenSSL 3.1 and 3.0 are vulnerable to this issue.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.12                                                                      |
+| Fixed version  | 3.0.2-0ubuntu1.12                                                                       |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N                                            |
+
+ubuntu,CVE-2023-0217,MEDIUM,> An invalid pointer dereference on read can be triggered when an application tries to check a malformed DSA public key by the EVP_PKEY_public_check() function. This will most likely lead to an application crash. This function can be called on public keys supplied from untrusted sources which could allow an attacker to cause a denial of service attack. The TLS implementation in OpenSSL does not call this function but applications might call the function if there are additional security requirements imposed by standards such as FIPS 140-3.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-5156,MEDIUM,> A flaw was found in the GNU C Library. A recent fix for CVE-2023-4806 introduced the potential for a memory leak, which may result in an application crash.
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/glibc@2.35-0ubuntu3.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <2.35-0ubuntu3.5                                                                     |
+| Fixed version  | 2.35-0ubuntu3.5                                                                      |
+| CVSS Score     |                                                                                  7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                         |
+
+ubuntu,CVE-2023-29491,MEDIUM,> ncurses before 6.4 20230408, when used by a setuid application, allows local users to trigger security-relevant memory corruption via malformed data in a terminfo database file that is found in $HOME/.terminfo or reached via the TERMINFO or TERM environment variable.
+
+|                |                                                                              |
+|----------------|------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/ncurses@6.3-2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <6.3-2ubuntu0.1                                                              |
+| Fixed version  | 6.3-2ubuntu0.1                                                               |
+| CVSS Score     |                                                                          7.8 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                 |
+
+ubuntu,CVE-2023-47038,MEDIUM,> [A crafted regular expression when compiled by perl 5.30.0 through 5.38.0 can cause a one attacker controlled byte buffer overflow in a heap allocated buffer]
+
+|                |                                                                                       |
+|----------------|---------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/perl@5.34.0-3ubuntu1.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <5.34.0-3ubuntu1.3                                                                    |
+| Fixed version  | 5.34.0-3ubuntu1.3                                                                     |
+| CVSS Score     |                                                                                   7.8 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                          |
+
+ubuntu,CVE-2022-42898,MEDIUM,> PAC parsing in MIT Kerberos 5 (aka krb5) before 1.19.4 and 1.20.x before 1.20.1 has integer overflows that may lead to remote code execution (in KDC, kadmind, or a GSS or Kerberos application server) on 32-bit platforms (which have a resultant heap-based buffer overflow), and cause a denial of service on other platforms. This occurs in krb5_pac_parse in lib/krb5/krb/pac.c. Heimdal before 7.7.1 has "a similar bug."
+
+|                |                                                                              |
+|----------------|------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/krb5@1.19.2-2?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1.19.2-2ubuntu0.1                                                           |
+| Fixed version  | 1.19.2-2ubuntu0.1                                                            |
+| CVSS Score     |                                                                          8.8 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                 |
+
+ubuntu,CVE-2022-3786,HIGH,> A buffer overrun can be triggered in X.509 certificate verification, specifically in name constraint checking. Note that this occurs after certificate chain signature verification and requires either a CA to have signed a malicious certificate or for an application to continue certificate verification despite failure to construct a path to a trusted issuer. An attacker can craft a malicious email address in a certificate to overflow an arbitrary number of bytes containing the `.' character (decimal 46) on the stack. This buffer overflow could result in a crash (causing a denial of service). In a TLS client, this can be triggered by connecting to a malicious server. In a TLS server, this can be triggered if the server requests client authentication and a malicious client connects.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.7                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.7                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-0286,HIGH,> There is a type confusion vulnerability relating to X.400 address processing inside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but the public structure definition for GENERAL_NAME incorrectly specified the type of the x400Address field as ASN1_TYPE. This field is subsequently interpreted by the OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an ASN1_STRING. When CRL checking is enabled (i.e. the application sets the X509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass arbitrary pointers to a memcmp call, enabling them to read memory contents or enact a denial of service. In most cases, the attack requires the attacker to provide both the certificate chain and CRL, neither of which need to have a valid signature. If the attacker only controls one of these inputs, the other input must already contain an X.400 address as a CRL distribution point, which is uncommon. As such, this vulnerability is most likely to only affect applications which have implemented their own functionality for retrieving CRLs over a network.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.8                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.8                                                                        |
+| CVSS Score     |                                                                                     7.4 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H                                            |
+
+ubuntu,CVE-2022-3602,HIGH,> A buffer overrun can be triggered in X.509 certificate verification, specifically in name constraint checking. Note that this occurs after certificate chain signature verification and requires either a CA to have signed the malicious certificate or for the application to continue certificate verification despite failure to construct a path to a trusted issuer. An attacker can craft a malicious email address to overflow four attacker-controlled bytes on the stack. This buffer overflow could result in a crash (causing a denial of service) or potentially remote code execution. Many platforms implement stack overflow protections which would mitigate against the risk of remote code execution. The risk may be further mitigated based on stack layout for any given platform/compiler. Pre-announcements of CVE-2022-3602 described this issue as CRITICAL. Further analysis based on some of the mitigating factors described above have led this to be downgraded to HIGH. Users are still encouraged to upgrade to a new version as soon as possible. In a TLS client, this can be triggered by connecting to a malicious server. In a TLS server, this can be triggered if the server requests client authentication and a malicious client connects. Fixed in OpenSSL 3.0.7 (Affected 3.0.0,3.0.1,3.0.2,3.0.3,3.0.4,3.0.5,3.0.6).
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/openssl@3.0.2-0ubuntu1.6?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <3.0.2-0ubuntu1.7                                                                       |
+| Fixed version  | 3.0.2-0ubuntu1.7                                                                        |
+| CVSS Score     |                                                                                     7.5 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H                                            |
+
+ubuntu,CVE-2023-31484,MEDIUM,> CPAN.pm before 2.35 does not verify TLS certificates when downloading distributions over HTTPS.
+
+|                |                                                                                       |
+|----------------|---------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/perl@5.34.0-3ubuntu1.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <5.34.0-3ubuntu1.2                                                                    |
+| Fixed version  | 5.34.0-3ubuntu1.2                                                                     |
+| CVSS Score     |                                                                                   8.1 |
+| CVSS Vector    | CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H                                          |
+
+ubuntu,CVE-2023-2603,MEDIUM,> A vulnerability was found in libcap. This issue occurs in the _libcap_strdup() function and can lead to an integer overflow if the input string is close to 4GiB.
+
+|                |                                                                                       |
+|----------------|---------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/libcap2@1:2.44-1build3?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <1:2.44-1ubuntu0.22.04.1                                                              |
+| Fixed version  | 1:2.44-1ubuntu0.22.04.1                                                               |
+| CVSS Score     |                                                                                   7.8 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                          |
+
+ubuntu,CVE-2023-4911,HIGH,> A buffer overflow was discovered in the GNU C Library's dynamic loader ld.so while processing the GLIBC_TUNABLES environment variable. This issue could allow a local attacker to use maliciously crafted GLIBC_TUNABLES environment variables when launching binaries with SUID permission to execute code with elevated privileges.
+
+|                |                                                                                      |
+|----------------|--------------------------------------------------------------------------------------|
+| Package        | pkg:deb/ubuntu/glibc@2.35-0ubuntu3.1?os_distro=jammy&os_name=ubuntu&os_version=22.04 |
+| Affected range | <2.35-0ubuntu3.4                                                                     |
+| Fixed version  | 2.35-0ubuntu3.4                                                                      |
+| CVSS Score     |                                                                                  7.8 |
+| CVSS Vector    | CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                         |
+

@@ -1,0 +1,17 @@
+{
+  "name": "gemicle-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ilya~ <YOUR_EMAIL~npm>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "csv-parse": "^5.5.3",
+    "fs": "^0.0.1-security",
+    "googleapis": "^130.0.0"
+  }
+}
